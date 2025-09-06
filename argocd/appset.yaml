@@ -7,7 +7,7 @@ spec:
   generators:
   - git:
       repoURL: https://github.com/fabio-mrocha/kargo-advanced.git
-      revision: HEAD
+      revision: main
       directories:
       - path: env/*
   template:
@@ -21,9 +21,9 @@ spec:
         name: in-cluster
       project: guestbook
       source:
-        path: ./
         repoURL: https://github.com/fabio-mrocha/kargo-advanced.git
         targetRevision: main
+        path: env/{{path.basename}}
       syncPolicy:
         automated:
           prune: true
