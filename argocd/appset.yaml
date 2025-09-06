@@ -26,3 +26,11 @@ spec:
         path: ./
         repoURL: https://github.com/akuity/kargo-advanced.git
         targetRevision: env/{{path.basename}}
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+          - PruneLast=true
+          - ApplyOutOfSyncOnly=true
+          - CreateNamespace=true
